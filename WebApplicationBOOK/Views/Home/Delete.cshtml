@@ -1,0 +1,39 @@
+﻿@model WebApplicationBOOK.Models.Korisnikk
+
+<h2>Delete</h2>
+@using (Html.BeginForm("delete", "home", FormMethod.Post, new { id = "popupForm" }))
+{
+    @Html.HiddenFor(a => a.Korisnik_Id)
+    <div class="form-group">
+        <label>Ime</label>
+        <p>@Model.FirstName</p>
+    </div>
+
+    <div class="form-group">
+        <label>Prezime</label>
+        <p>@Model.LastName</p>
+    </div>
+
+    <div class="form-group">
+        <label>Adresa</label>
+        <p>@Model.AdressName</p>
+    </div>
+
+    <div class="form-group">
+        <label>E-mail</label>
+        <p>@Model.E_mail</p>
+    </div>
+    <div class="form-group">
+        <label>Tel broj</label>
+        <p>@Model.Tel_broj</p>
+    </div>
+    <div class="form-group">
+        <label>Vrsta tel broja</label>
+        <p>@Model.Vrsta_tel_broja</p>
+    </div>
+}
+    <div>
+        <input type="submit" value="Delete" />
+    </div>
+
+

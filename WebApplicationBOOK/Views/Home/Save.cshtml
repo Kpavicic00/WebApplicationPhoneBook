@@ -1,0 +1,44 @@
+﻿@model WebApplicationBOOK.Models.Korisnikk
+
+<h2>Save</h2>>
+@using (Html.BeginForm("save", "home", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model != null && Model.Korisnik_Id > 0)
+    {
+        @Html.HiddenFor(a => a.Korisnik_Id)
+    }
+    <div class="form-group">
+        <label>Ime </label>
+        @Html.TextBoxFor(a => a.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.FirstName)
+    </div>
+    <div class="form-group">
+        <label>Prezime </label>
+        @Html.TextBoxFor(a => a.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.LastName)
+    </div>
+    <div class="form-group">
+        <label>Adresa </label>
+        @Html.TextBoxFor(a => a.AdressName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.AdressName)
+    </div>
+    <div class="form-group">
+        <label>E-mail </label>
+        @Html.TextBoxFor(a => a.E_mail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.E_mail)
+    </div>
+    <div class="form-group">
+        <label>Tel broj </label>
+        @Html.TextBoxFor(a => a.Tel_broj, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Tel_broj)
+    </div>
+    <div class="form-group">
+        <label>Vrsta tel broja </label>
+        @Html.TextBoxFor(a => a.Vrsta_tel_broja, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Vrsta_tel_broja)
+    </div>
+    <div>
+        <input type="submit" value="save" />
+    </div>
+}
+
